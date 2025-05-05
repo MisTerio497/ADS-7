@@ -8,14 +8,14 @@ class Train {
     bool light; // состояние лампочки
     Car *next;
     Car *prev;
-    Car(bool num) : light(num),next(nullptr), prev(nullptr) {}
+    explicit Car(bool num) : light(num), next(nullptr), prev(nullptr) {}
   };
   int countOp; // счетчик шагов (число переходов из вагона в вагон)
-  Car *first; // точка входа в поезд (первый вагон)
+  Car *first;  // точка входа в поезд (первый вагон)
  public:
   Train();
   void addCar(bool light); // добавить вагон с начальным состоянием лампочки
-  int getLength();          // вычислить длину поезда
-  int getOpCount();         // вернуть число переходов (из вагона в вагон)
+  int getLength();         // вычислить длину поезда
+  int getOpCount();        // вернуть число переходов (из вагона в вагон)
 };
-#endif  // INCLUDE_TRAIN_H_
+#endif // INCLUDE_TRAIN_H_
